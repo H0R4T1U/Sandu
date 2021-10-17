@@ -1,2 +1,0 @@
-# Sandu
-Discord Bot
