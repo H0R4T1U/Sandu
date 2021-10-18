@@ -4,7 +4,7 @@ const { Client, Collection, Intents } = require('discord.js')
 const { token } = require('./config.json');
 
 // Create a new client instance
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS,"GUILDS", "GUILD_MESSAGES","GUILD_VOICE_STATES"] });
 
 
 
