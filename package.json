@@ -18,10 +18,13 @@
     "@discordjs/rest": "^0.1.0-canary.0",
     "@discordjs/voice": "^0.6.0",
     "discord-api-types": "^0.24.0",
+    "discord-ytdl-core": "^5.0.4",
     "discord.js": "^13.2.0",
+    "discordjs-ytdl": "^2.2.0",
     "dotenv": "^10.0.0",
     "ffmpeg-static": "^4.4.0",
-    "libsodium-wrappers": "^0.7.9"
+    "libsodium-wrappers": "^0.7.9",
+    "ytdl-core": "^4.9.1"
   },
   "devDependencies": {
     "eslint": "^8.0.1"
