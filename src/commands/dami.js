@@ -16,7 +16,7 @@ module.exports = {
 	async execute(interaction) {
 		const piesa = interaction.options.getString("pesa");
 		let connection = getVoiceConnection(interaction.guildId);
-		if(!connection){
+		if(!connection){ //checks if there is a connection and if not, creates one.
 			const channel = interaction.member.voice.channel;
 			connection = joinVoiceChannel({
 				channelId: channel.id,
@@ -26,7 +26,10 @@ module.exports = {
 		}
 		let stream;
 
-		await youtube.search(piesa).then(results=>{
+		
+		
+
+		await youtube.search(piesa).then(results=>{ //Gets the song from youtube and adds it to the playlsit
 
 			if(results){
 				this.playlist.push(results[0]);
