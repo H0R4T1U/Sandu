@@ -1,5 +1,4 @@
 # Sandu
-Sandu is a discord music playing bot I've made because Groovy was ceased and desisted </br>
 <strong>Sandu</strong> is a discord music playing bot I've made because Groovy was ceased and desisted </br>
 It has commands like: <strong><em>play,play now,skip,remove,jump and queue.</em></strong></br>
 The command names and descriptions were made in romanian while under the effect of various substances so if you need any help with the translation feel free to ask me!
