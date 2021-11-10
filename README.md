@@ -25,3 +25,6 @@ The command names and descriptions were made in romanian while under the effect 
 ```
   - Type: _node depploy-commands.js_ once
   - Type: _node index.js_
+  
+  ### Docker 
+  - To run with docker instead of directly just build the image with _docker build_ and run it with _docker run_
