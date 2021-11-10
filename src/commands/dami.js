@@ -9,7 +9,7 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('dami')
 		.setDescription('Iti dau!')
-		.addStringOption(option => option.setName("pesa").setDescription("Numele pesei").setRequired(true)),
+		.addStringOption(option => option.setName("pesa").setDescription("Numele pesei/Playlist").setRequired(true)),
 	playlist:[],
 	player: new createAudioPlayer(),
 	i:0,//static foloseste
@@ -28,17 +28,43 @@ module.exports = {
 
 		
 		
+		if(piesa.includes('playlist')){
+			await youtube.getPlaylist(piesa).then(async results=>{ //Gets the song from youtube and adds it to the playlsit
 
-		await youtube.search(piesa).then(results=>{ //Gets the song from youtube and adds it to the playlsit
+				if(results){
+					const songs = await results.getVideos()
+						
+						for(const i in songs){
+							this.playlist.push(songs[i]);
+						}
+					
+					/*
+					let i=0
+					let result = results[i];
+					while(result){
+						this.playlist.push(result);
+						result=results[++i];
+						*/
+				}else{
+					interaction.reply("Couldn't find shit!")
+					return;
+				}
+				
+			})
+	
+		}else{
+			await youtube.search(piesa).then(results=>{ //Gets the song from youtube and adds it to the playlsit
 
-			if(results){
-				this.playlist.push(results[0]);
-			}else{
-				interaction.reply("Couldn't find shit!")
-				return;
-			}
-			
-		})
+				if(results){
+					this.playlist.push(results[0]);
+				}else{
+					interaction.reply("Couldn't find shit!")
+					return;
+				}
+				
+			})
+		}
+		
 
 		if(!(this.player.state.status == "playing" || this.player.state.status == "buffering")){ //checks if player is currently playing a song
 
